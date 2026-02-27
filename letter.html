@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter For You</title>
+
+<style>
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: radial-gradient(circle, #ffcccc, #ff0000);
+  font-family: 'Georgia', serif;
+}
+
+.letter-box{
+  background:white;
+  width:90%;
+  max-width:700px;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 0 30px rgba(255,255,255,0.7);
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+  text-align:center;
+  color:#d6336c;
+  margin-bottom:20px;
+}
+
+p{
+  font-size:18px;
+  line-height:1.7;
+  color:#333;
+  opacity:0;
+  animation: typeIn 1s forwards;
+}
+
+p:nth-child(2){animation-delay:0.5s;}
+p:nth-child(3){animation-delay:1.5s;}
+p:nth-child(4){animation-delay:2.5s;}
+p:nth-child(5){animation-delay:3.5s;}
+p:nth-child(6){animation-delay:4.5s;}
+p:nth-child(7){animation-delay:5.5s;}
+p:nth-child(8){animation-delay:6.5s;}
+
+@keyframes typeIn{
+  to{opacity:1;}
+}
+
+.signature{
+  margin-top:30px;
+  text-align:right;
+  font-weight:bold;
+  color:#d6336c;
+  font-size:20px;
+}
+</style>
+</head>
+
+<body>
+<audio id="bgMusic" src="song3.mp3"loop></audio>
+
+<div class="letter-box">
+  <h1>💌 A Letter for my pookie friend</h1>
+
+  <p>Dear Shredhara,</p>
+
+  <p>
+    Hola!!, Enna birthday boy, gift epdi? 18 promise la panni irupa,adha last varaikum nyabagam vechiko!!,letter konjam perusa tha irukum time free panniko!
+    Enaku enga irundhu start pandradhu nu therila, ellam magic maari iruku, 4th std la nenaichirupom ha evalo close aavom nu?anyway god ha thank pandren!!
+  </p>
+
+  <p>
+    I never imagined unkooda ivalo close aaven nu, but anyway ipdi oru boy en life la friend ha vandhan nu enaku happy😊.
+    Naa edhachu loosu maari pesi unaku hurt aagi irundha so🪙, I know unaku pudikadhu nu irundhalum solluven,
+    Nee enna pathi yenna nenaikira nu la theriyadhu, but I will try to be a best friend. Unaku theriyadhu how slowly you are making an huge impact in my life!😸Unna punch nu koopdren nu thappa nenaikadha adhu monkey mattum illa adhu la car um iruku, naa koopdra neram, you should buy punch.ev!!
+  </p>
+
+  <p>
+    Shredhara unna pathi nee enna nenaikira nu therila, but enga point of view la nee romba nala paiyan!!🫡 nee nenaikalam nala paiyan ha irundha naladhu nadakadhu nu,, but naa solren unaku kandipa naladhu nadakum, you are a huge green forest, adha protect panna theriyadhavangala la vitru yosikadha.unoda green forest character ku a big green world ponnu oruthi varuva, apo enkita pesama la irukadha, atleast two days once naachu pesu🥺, nee pesuva, theriyum irundhalum gf thaana mukiyam. 
+  </p>
+
+  <p>
+    This year, sir vandhu man aitenga😎, irundhalum nee, enna porutha varaikum boy thaa 4th std shredharan, I hope yepayum idhe maari pesitu iru, idhu naa sollalama nu therila but solren, edhachu sollanum na dharalama sollu, I am all ears, unaku enna share pannanum nu thonudho share pannu, yaarachu edhachu sonnaga, unna hurt pannalum enkitta sollu senji vitrulam😊😎, I don't know whether naa comfortable ha illaya nu, I am sure naa judge pannamaten,Main ha indha maari idhu la olara maten. Indha year nee neraiya sirikanum, sirichite irukanum, edhayum yosikadha, upset ha irundha call pannu,attend pannala na indha letter illa chat ha paaru automatic ha mind maaridum, maaruma nu therila but I hope so!!
+  </p>
+  <p>
+   Shredhara, last ha sollikuren, I don't know what future holds, aana please endha situation laiyum silent aagadha thitanum na ofcourse go ahead!. Pesite iru,naa kekuren, Divya intro la kuduka mudiyadhu, deepika va neeya kandupudicha paathukalam,adhuvaraikum naa unna disturb pannite tha irupen, adhuku aprm sir busy aiduveenga naa la ant maari aiduven, who knows?
+  </p>
+  <p>
+   Last but not least indha 18th and upcoming years la super ha irukum, sirichite iru, neraiya happiness, neraiya success, goodness, confidence, ella nala vishayamum nadakum, God oda blessing irukum.Neeyum nala irupa naalu pera nala paathupa, vendakka neraiya sapudu, take care of yourself, Best of luck..
+  </p>
+
+  <div class="signature">
+    — From Charulathaa 💖
+     To my human cat😸
+  </div>
+</div>
+<script>
+const music = document.getElementById("bgMusic");
+
+document.body.addEventListener("click", () => {
+  music.play();
+}, { once: true });
+</script>
+
+</body>
+</html>

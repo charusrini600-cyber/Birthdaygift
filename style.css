@@ -1,0 +1,110 @@
+body {
+  background: linear-gradient(to bottom, #8b0000, #ff4d4d);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  margin-top: 40px;
+}
+p{
+  font-size: 20px;
+}
+
+.timerBox {
+  background: white;
+  color: black;
+  display: inline-block;
+  padding: 20px 30px;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+#birthdayScreen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, #8b0000, #ff4d4d);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.birthdayText {
+  font-size: 50px;
+  color: white;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Emoji rain */
+.emoji {
+  position: fixed;
+  top: -50px;
+  font-size: 30px;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+.gift {
+  background: #ffd6d6;
+  border: 3px dashed white;
+  padding: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  width:90%
+  max-width: 200px;
+}
+
+.gift:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px white;
+}
+
+.locked {
+  opacity: 0.6;
+}
+.unlocked {
+  opacity: 1;
+  border: 3px solid gold;
+  box-shadow: 0 0 20px gold;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+    text-align:centre;
+  }
+
+  .cake {
+    transform: scale(0.7);
+  }
+
+  .gift-box {
+    width: 90%;
+    margin:auto;
+  }
+  p{
+     font-sixe:16px;
+  }
+}

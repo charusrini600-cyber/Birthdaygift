@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Positive Spell</title>
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to bottom, #ff6a6a, #ffb3b3);
+  text-align: center;
+  color: white;
+}
+
+.container {
+  padding: 40px 20px 80px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.buttons button {
+  background: gold;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 20px;
+  margin: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.buttons button:hover {
+  box-shadow: 0 0 30px gold;
+  transform: scale(1.1);
+}
+
+input {
+  margin-top: 20px;
+  padding: 12px;
+  width:90%
+  max-width: 250px;
+  border-radius: 20px;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0 0 15px white;
+
+}
+
+.unlock-btn {
+  margin-top: 20px;
+  background: gold;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.unlock-btn:hover {
+  box-shadow: 0 0 40px gold;
+  transform: scale(1.1);
+}
+
+#result {
+  margin-top: 40px;
+  font-size: 20px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 0 15px cyan, 0 0 25px white;
+
+}
+
+.crystal {
+  font-size: 60px;
+  margin: 20px;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h1>🔮 Cast Your Positive Spell</h1>
+  <p>Choose or type a positive word</p>
+
+  <div class="buttons">
+    <button onclick="setWord('believe')">Believe</button>
+    <button onclick="setWord('hope')">Hope</button>
+    <button onclick="setWord('trust')">Trust</button>
+    <button onclick="setWord('dream')">Dream</button>
+    <button onclick="setWord('strength')">Strength</button>
+    <button onclick="setWord('Patience')">Patience</button>
+  </div>
+
+  <input id="spellInput" placeholder="Type your word">
+
+  <br>
+  <button class="unlock-btn" onclick="castSpell()">Unlock</button>
+
+  <div class="crystal">🔮</div>
+
+  <p id="result"></p>
+</div>
+
+<script>
+const spellQuotes = {
+  believe: "🌟 Believe in yourself — you are capable of amazing things.Shredharan believe yorself!!",
+  hope: "🌈 Hope is the heartbeat of the soul.*H*ave *O*nly *P*ositive *E*xpectations!!",
+  trust: "🤝 Trust the process — everything will fall into place.The Universe is working in favour to you!",
+  dream: "✨ If you dream it, you can do it!, LET THE DREAMS BE YOUR WINGS!!",
+  strength: "💪 Your strength is greater than your struggles. you are already a strong boy, you should attract every positivity ",
+  courage: "🦁 Courage means moving forward even when afraid.Be a lion in a forest!!",
+  success: "🏆 Success is built one small step at a time. suceess is waiting for you, go grab it!",
+  patience: "⏳ Patience brings powerful results.Porumai mukiyam bigil uhh"
+};
+
+function setWord(word) {
+  document.getElementById("spellInput").value = word;
+}
+
+function castSpell() {
+  const word = document.getElementById("spellInput").value.toLowerCase().trim();
+  const result = document.getElementById("result");
+
+  if (spellQuotes[word]) {
+    result.innerHTML = "✨ " + spellQuotes[word];
+    result.style.color = "red";
+    result.style.textShadow = "0 0 10px red, 0 0 20px crimson";
+  } else {
+    result.innerHTML = "❌ Wrong spell! Try a positive word like Believe, Hope, or Dream.";
+    result.style.color = "yellow";
+  }
+}
+</script>
+
+</body>
+</html>

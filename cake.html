@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story Cake</title>
+
+<style>
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background: radial-gradient(circle, #ffe0e0, #ff4d4d);
+  font-family:'Comic Sans MS', cursive;
+  color:white;
+  text-align:center;
+}
+
+h1{ text-shadow:0 0 10px white; }
+
+/* Cake */
+#cake{
+  margin-top:40px;
+  cursor:pointer;
+  animation:float 2s infinite ease-in-out;
+  position:relative;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+.layer{
+  margin:auto;
+  border-radius:25px;
+  box-shadow:0 0 20px rgba(255,255,255,0.7);
+}
+
+.layer1{width:260px;height:60px;background:#ff4d4d;}
+.layer2{width:220px;height:60px;background:#ff6666;}
+.layer3{width:180px;height:60px;background:#ff8080;}
+.layer4{width:140px;height:60px;background:#ff9999;}
+
+#plate{
+  width:300px;
+  height:18px;
+  background:white;
+  border-radius:50%;
+  box-shadow:0 0 15px white;
+  margin-top:5px;
+}
+
+/* ===== NUMBER CANDLES ===== */
+.candles{
+  position:absolute;
+  top:-80px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:20px;
+}
+
+.number-candle{
+  width:35px;
+  height:80px;
+  background:white;
+  border-radius:10px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.25rem;
+  font-weight:bold;
+  color:red;
+  box-shadow:0 0 10px rgba(255,255,255,0.8);
+}
+
+/* Flame */
+.flame{
+  position:absolute;
+  top:-22px;
+  width:14px;
+  height:22px;
+  background:orange;
+  border-radius:50%;
+  box-shadow:0 0 15px yellow;
+  animation:flicker 0.4s infinite alternate;
+}
+
+@keyframes flicker{
+  from{transform:scale(1);}
+  to{transform:scale(1.2);}
+}
+
+/* Message box */
+#storyBox{
+  background:white;
+  color:#ff2e63;
+  display:none;
+  margin:20px auto;
+  padding:15px;
+  width:90%;
+  max-width:500px;
+  border-radius:15px;
+  font-size:1.25rem;
+  box-shadow:0 0 20px white;
+}
+
+#finalText{
+  display:none;
+  font-size:1rem;
+  margin-top:20px;
+  text-shadow:0 0 12px yellow;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎂 Click the Cake to Cut 🎂</h1>
+<p>Tap the cake to reveal the secret!!</p>
+
+<div id="cake">
+
+  <!-- Candles -->
+  <div class="candles">
+    <div class="number-candle">
+      <div class="flame"></div>
+      1
+    </div>
+    <div class="number-candle">
+      <div class="flame"></div>
+      8
+    </div>
+  </div>
+
+  <!-- Cake Layers -->
+  <div class="layer layer4"></div>
+  <div class="layer layer3"></div>
+  <div class="layer layer2"></div>
+  <div class="layer layer1"></div>
+</div>
+
+<div id="plate"></div>
+
+<div id="storyBox"></div>
+<div id="finalText"> ✨ Happy Birthday! To my punch!!,,And the 'he' is "you" ✨</div>
+<audio id="bgMusic" src="song1.mp3"></audio>
+
+
+
+<script>
+const music = document.getElementById("bgMusic");
+
+document.body.addEventListener("click", () => {
+  music.play();
+}, { once: true });
+
+let slice = 0;
+
+const story = [
+  "He is not loud like thunder,Not sharp like stone\n He is a green forest—Calm, steady, fully grown.\nHe cares in quiet ways,Not in things\n he shows Like checking if you reached home\nLike listening more than he knows.",
+  
+  "He respects like old trees do,Standing tall and true,\nParents first, friends always,That’s the kind of heart he grew.\nHis jokes arrive like sunlight,Breaking the serious air,\nAnd when confusion tries to win,A dancing teddy says \n“I care",
+  
+  "If you were a place, you would be musuem — where rare piece like you would be kept\nHe doesn’t rush with answers,He chooses to understand,\nPatience in his silence,Support in where he stands.\nIn a world that loves noise, And mistakes kindness for weak,\nHe stayed gentle,And strong in the way he speaks",
+  
+  "If you were a message, you would be 'Congrats' — small word, big change, and a whole friendship started.\nSo if someone asks,“What kind of person is he?”\nSay — “He’s a green forest in human form,\nWhere friendship feels safe to be.”"
+];
+const layers = document.querySelectorAll(".layer");
+
+document.getElementById("cake").onclick = function(){
+  if(slice < layers.length){
+    layers[slice].style.display="none";
+    document.getElementById("storyBox").style.display="block";
+    document.getElementById("storyBox").innerText = story[slice];
+    slice++;
+  } else {
+    document.getElementById("cake").style.display="none";
+    document.getElementById("storyBox").style.display="none";
+    document.getElementById("finalText").style.display="block";
+  }
+}
+</script>
+
+</body>
+</html>

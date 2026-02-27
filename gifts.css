@@ -1,0 +1,37 @@
+body {
+  background: linear-gradient(to bottom, #7b0000, #ff4d4d);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+.gift-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.gift {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 18px;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.gift span {
+  display: block;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.locked {
+  border: 3px dashed red;
+}

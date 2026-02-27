@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Promises</title>
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle, #ffcccc, #ff0000);
+  text-align: center;
+  color: white;
+}
+
+.container {
+  padding: 40px 20px;
+}
+
+h1 {
+  text-shadow: 0 0 15px white, 0 0 30px gold;
+}
+
+.promise-box {
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 0 20px white;
+}
+
+.question {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+button {
+  background: gold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px gold;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px gold;
+}
+
+input {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  width: 250px;
+  text-align: center;
+  font-size: 2rem;
+  box-shadow: 0 0 15px white;
+}
+
+#finalMessage {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  text-shadow: 0 0 15px cyan, 0 0 25px white;
+  display: none;
+}
+
+.sparkle {
+  font-size: 2rem;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h1>📜 Promise Page</h1>
+  <p>Before you open the next surprise, make these promises 💖</p>
+
+  <!-- Promise 1 -->
+  <div class="promise-box" id=p1>
+    <div class="question">1️⃣  I will priortize myself first!</div>
+    <button onclick="nextpromise(1)">I Promise</button>
+    <button onclick="nextpromise(1)">I Will make it</button>
+  </div>
+
+ <!-- Promise 2 -->
+  <div class="promise-box" id=p2 style="display:none;">
+    <div class="question">2️⃣ You want to takecare of yourself, your family, friends!!</div>
+    <button onclick="nextpromise(2)">I Promise</button>
+    <button onclick="nextpromise(2)">I Will make it👍🏻</button>
+  </div>
+
+ <!-- Promise 3 -->
+  <div class="promise-box" id=p3 style="display:none;">
+    <div class="question">3️⃣ 	I will make myself happy, independent, healthy!!</div>
+    <button onclick="nextpromise(3)">I Promise</button>
+    <button onclick="nextpromise(3)">I Will make it👍🏻</button>
+  </div>
+
+ <!-- Promise 4 -->
+ <div class="promise-box" id=p4 style="display:none;">
+  <div class="question">4️⃣I will be strong!!</div>
+  <button onclick="nextpromise(4)">I Promise</button>
+  <button onclick="nextpromise(4)">I will make it👍🏻</button>
+</div>
+
+<!-- Promise 5 -->
+<div class="promise-box" id=p5 style="display:none;">
+  <div class="question">5️⃣You need to take rest whenever needed!</div>
+  <button onclick="nextpromise(5)">I Promise</button>
+  <button onclick="nextpromise(5)">I will make it👍🏻</button>
+</div>
+
+<!-- Promise 6 -->
+<div class="promise-box" id=p6 style="display:none;">
+  <div class="question">6️⃣I will study hard!!.</div>
+  <button onclick="nextpromise(6)">I Promise</button>
+  <button onclick="nextpromise(6)">I will make it👍🏻</button>
+</div>
+
+<!-- Promise 7 -->
+<div class="promise-box" id=p7 style="display:none;">
+  <div class="question">7️⃣I will be so optimistic! </div>
+  <button onclick="nextpromise(7)">I Promise</button>
+  <button onclick="nextpromise(7)">I will make it👍🏻</button>
+</div>
+
+<!-- Promise 8 -->
+<div class="promise-box" id=p8 style="display:none;">
+  <div class="question">8️⃣I will give a stronger comeback this year!!</div>
+  <button onclick="nextpromise(8)">I Promise</button>
+  <button onclick="nextpromise(8)">I will make it👍🏻</button>
+</div>
+
+<!-- Promise 9 -->
+<div class="promise-box" id=p9 style="display:none;">
+  <div class="question">9️⃣ I believe in god's path!!</div>
+  <button onclick="nextpromise(9)">I Promise</button>
+  <button onclick="nextpromise(9)">I will make it👍🏻</button>
+</div>
+
+<!-- Promise 10 -->
+<div class="promise-box" id=p10 style="display:none;">
+  <div class="question">1️⃣0️⃣ I will never stop talking to charu!😅</div>
+  <button onclick="nextpromise(10)">I Promise</button>
+  <button onclick="nextpromise(10)">I will make it👍🏻</button>
+</div>
+
+<!-- Promise 11 -->
+<div class="promise-box" id=p11 style="display:none;">
+  <div class="question">1️⃣1️⃣ I will listen to charu's advice!!</div>
+  <button onclick="nextpromise(11)">I Promise</button>
+  <button onclick="nextpromise(11)">I will make it👍🏻</button>
+</div>
+
+<!-- Promise 12 -->
+<div class="promise-box" id=p12 style="display:none;">
+  <div class="question">1️⃣2️⃣ Our friendship should never end!!</div>
+  <button onclick="nextpromise(12)">I Promise</button>
+  <button onclick="nextpromise(12)">I will make it👍🏻</button>
+</div>
+
+<!-- Promise 13 -->
+<div class="promise-box" id=p13 style="display:none;">
+  <div class="question">1️⃣3️⃣ I will make parents proud!</div>
+  <button onclick="nextpromise(13)">I Promise</button>
+  <button onclick="nextpromise(13)">I will make it👍🏻</button>
+</div>
+
+<!-- Promise 14 -->
+<div class="promise-box" id=p14 style="display:none;">
+  <div class="question">1️⃣4️⃣ I will buy car, bike, house with my money!!!</div>
+  <button onclick="nextpromise(14)">I Promise</button>
+  <button onclick="nextpromise(14)">I will make it👍🏻</button>
+</div>
+
+<!-- Promise 15 -->
+<div class="promise-box" id=p15 style="display:none;">
+  <div class="question">1️⃣5️⃣ I will eat vendakka, badam and all good things to increase memory!!</div>
+  <button onclick="nextpromise(15)">I Promise</button>
+  <button onclick="nextpromise(15)">I will make it👍🏻</button>
+</div>
+
+<!-- Promise 16 -->
+<div class="promise-box" id=p16 style="display:none;">
+  <div class="question">1️⃣6️⃣ I will give treat to charu on my first salary!!</div>
+  <button onclick="nextpromise(16)">I Promise</button>
+  <button onclick="nextpromise(16)">I will make it👍🏻</button>
+</div>
+
+<!-- Promise 17 -->
+<div class="promise-box" id=p17 style="display:none;">
+  <div class="question">1️⃣7️⃣I will respect charu at any cost😅😅</div>
+  <button onclick="nextpromise(17)">I Promise</button>
+  <button onclick="nextpromise(17)">I will make it👍🏻</button>
+  <button onclick="nextpromise(17)">Its hard!!</button>
+</div>
+
+<!-- Promise 18 -->
+<div class="promise-box" id=p18 style="display:none;">
+  <div class="question">1️⃣8️⃣I will make all these promises to be true!!</div>
+  <button onclick="nextpromise(18)">I Promise</button>
+  <button onclick="nextpromise(18)">I will make it👍🏻</button>
+</div>
+
+<!-- FINAL SEAL (AFTER p18) -->
+<div id="finalSection" style="display:none;">
+  <input id="nameInput" placeholder="Type your name to seal promise">
+  <br><br>
+  <button onclick="sealPromise()">Seal My Promise</button>
+  <div class="sparkle">✨📜✨</div>
+  <div id="finalMessage"></div>
+</div>
+  
+<script>
+function nextpromise(num) {
+  document.getElementById("p" + num).style.display = "none";
+
+  if (num < 18) {
+    document.getElementById("p" + (num + 1)).style.display = "block";
+  } else {
+    // LAST promise reached → show seal section
+    document.getElementById("finalSection").style.display = "block";
+  }
+}
+
+function sealPromise() {
+  const name = document.getElementById("nameInput").value.trim();
+
+  if (name === "") {
+    alert("Please type your name ✍️");
+    return;
+  }
+
+  document.getElementById("finalMessage").style.display = "block";
+  document.getElementById("finalMessage").innerHTML =
+    "✨ Promise Accepted, " + name + "!<br>Your promises are sealed for this year 💫";
+}
+</script>
