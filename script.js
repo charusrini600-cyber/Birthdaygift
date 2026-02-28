@@ -1,5 +1,5 @@
-const birthday = new Date();
-birthday.setMinutes(birthday.getMinutes() + 1);
+const birthday = new Date(2026,2,9,0,0,0);
+
 
 
 const emojis = ["🎉","🎂","🍫","😍","🎁"];

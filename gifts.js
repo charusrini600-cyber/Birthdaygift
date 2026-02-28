@@ -1,4 +1,4 @@
-const birthdayDate = new Date(2026, 1, 9);
+const birthdayDate = new Date(2026, 2, 9);
 
 const now = new Date();
 
@@ -15,12 +15,12 @@ function checkUnlocks() {
 
   // Birthday date: March 9
   const year = now.getFullYear();
-  const birthday = new Date(year, 1, 9); // month is 2 = March
+  const birthday = new Date(year, 2, 9); // month is 2 = March
 
   // Times on birthday
-  const spellTime = new Date(year, 1, 9, 8, 0);   // 8:00 AM
-  const promiseTime = new Date(year, 1, 9, 12, 0); // 12:00 PM
-  const cakeTime = new Date(year, 2, 1, 16, 0);  // 4:00 PM
+  const spellTime = new Date(year, 2, 9, 8, 0);   // 8:00 AM
+  const promiseTime = new Date(year, 2, 9, 12, 0); // 12:00 PM
+  const cakeTime = new Date(year, 2, 9, 16, 0);  // 4:00 PM
   const letterTime = new Date(year, 2, 9, 20, 0); // 8:00 PM
   const evilTime = new Date(year, 2, 9, 23, 0);  // 11:00 PM
 
