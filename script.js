@@ -1,4 +1,4 @@
-const birthday = new Date(2026,2,9,0,0,0);
+const birthday = new Date(2026,1,9,0,0,0);
 
 
 const emojis = ["🎉","🎂","🍫","😍","🎁"];
